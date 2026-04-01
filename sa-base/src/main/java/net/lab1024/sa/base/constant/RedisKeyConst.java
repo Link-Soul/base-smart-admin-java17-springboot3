@@ -13,6 +13,9 @@ public class RedisKeyConst {
 
     public static final String SEPARATOR = ":";
 
+    /**
+     * 系统级别公用常量
+     */
     public static class Support {
 
         public static final String FILE_PRIVATE_VO = "file:private:";
@@ -26,4 +29,8 @@ public class RedisKeyConst {
         public static final String LOGIN_VERIFICATION_CODE = "login:verification-code:";
 
     }
+    // **************************************************************************************
+    //      不同功能的redis key请继承 RedisKeyConst 并且定义不同的内部类，以此表明含义并区分用途
+    //              示例见 AdminRedisKeyConst、AdminCacheConst
+    // **************************************************************************************
 }

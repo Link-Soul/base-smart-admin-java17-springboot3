@@ -15,6 +15,8 @@ import org.springframework.core.env.ConfigurableEnvironment;
  * @Email lab1024@163.com
  * @Copyright  <a href="https://1024lab.net">1024创新实验室</a>
  */
+// 这意味着该日志监听器优先于 LoggingApplicationListener 也就是系统日志监听器
+// @Order注解是值越小，在系统中的加载速度早
 @Order(value = LoggingApplicationListener.DEFAULT_ORDER - 1)
 public class LogVariableListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent> {
 
