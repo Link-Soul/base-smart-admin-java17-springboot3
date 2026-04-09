@@ -27,6 +27,9 @@ public class ErrorCodeRegister {
         // 用户 通用错误码
         register(UserErrorCode.class, 30001, 40000);
 
+        // 订单 通用错误码
+        register(OrderErrorCode.class, 40001, 50000);
+
     }
 
 

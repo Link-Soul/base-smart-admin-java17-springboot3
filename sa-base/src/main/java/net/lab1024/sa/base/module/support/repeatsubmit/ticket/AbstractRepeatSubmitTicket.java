@@ -7,6 +7,8 @@ import java.util.function.Function;
 /**
  * 凭证（用于校验重复提交的东西）
  *
+ * 修改具体使用策略详见 RepeatSubmitConfig 的注入类
+ *
  * @Author 1024创新实验室-主任: 卓大
  * @Date 2025-07-26 23:56:58
  * @Wechat zhuoda1024
