@@ -18,14 +18,14 @@ public interface ErrorCode {
     String LEVEL_SYSTEM = "system";
 
     /**
-     * 未预期到的等级
-     */
-    String LEVEL_UNEXPECTED = "unexpected";
-
-    /**
      * 用户等级
      */
     String LEVEL_USER = "user";
+
+    /**
+     * 未预期到的等级
+     */
+    String LEVEL_UNEXPECTED = "unexpected";
 
     /**
      * 业务等级
