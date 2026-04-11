@@ -1,3 +1,16 @@
+后台文档：
+https://smartadmin.vip/views/doc/back/ApiEncryptDecrypt.html
+
+Manager 层：通用业务处理层，它有如下特征：
+
+    对第三方平台封装的层，预处理返回结果及转化异常信息；
+    对 Service 层通用能力的下沉，如缓存方案、中间件通用处理；
+    封装重复的业务逻辑，如批量操作、事务管理等。
+    与 DAO 层交互，对多个 DAO 的组合复用。
+注意事项：
+    1、该 Manager 层不允许互相调用
+    2、可以实现 ServiceImpl 或者 BaseService 类
+
 
 代码规范：
 1、业务代码层级与代码结构

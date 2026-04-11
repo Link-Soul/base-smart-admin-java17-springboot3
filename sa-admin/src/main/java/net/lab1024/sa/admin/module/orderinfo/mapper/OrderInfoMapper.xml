@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.lab1024.sa.admin.module.orderinfo.dao.OrderInfoDao">
+
+    <!-- 查询结果列 -->
+    <sql id="base_columns">
+        order_info.id,
+        order_info.customer_name,
+        order_info.total_amount,
+        order_info.remark,
+        order_info.update_time,
+        order_info.create_time
+    </sql>
+
+    <!-- 分页查询 -->
+    <select id="queryPage" resultType="net.lab1024.sa.admin.module.orderinfo.domain.vo.OrderInfoVO">
+        SELECT
+        <include refid="base_columns"/>
+        FROM order_info
+        <where>
+            <!--客户查询-->
+            <if test="queryForm.customer_name != null and queryForm.customer_name != ''">
+                AND INSTR(order_info.customer_name,#{queryForm.customer_name})
+            </if>
+            <!--备注查询-->
+            <if test="queryForm.remark != null and queryForm.remark != ''">
+                AND INSTR(order_info.remark,#{queryForm.remark})
+            </if>
+            <!--创建时间-->
+            <if test="queryForm.createTimeBegin != null">
+                AND order_info.create_time &gt;= #{queryForm.createTimeBegin}
+            </if>
+            <if test="queryForm.createTimeEnd != null">
+                AND order_info.create_time &lt;= #{queryForm.createTimeEnd}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
