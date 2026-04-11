@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="net.lab1024.sa.admin.module.orderproductinfo.dao.OrderProductInfoDao">
+
+    <!-- 查询结果列 -->
+    <sql id="base_columns">
+        order_product_info.id,
+        order_product_info.order_id,
+        order_product_info.product_name,
+        order_product_info.product_code,
+        order_product_info.price,
+        order_product_info.quantity,
+        order_product_info.update_time,
+        order_product_info.create_time
+    </sql>
+
+    <!-- 分页查询 -->
+    <select id="queryPage" resultType="net.lab1024.sa.admin.module.orderproductinfo.domain.vo.OrderProductInfoVO">
+        SELECT
+        <include refid="base_columns"/>
+        FROM order_product_info
+        <where>
+            <!--对应订单表主键-->
+            <if test="queryForm.orderId != null">
+                AND order_product_info.order_id = #{queryForm.orderId}
+            </if>
+            <!--商品名称-->
+            <if test="queryForm.productName != null and queryForm.productName != ''">
+                AND INSTR(order_product_info.product_name,#{queryForm.productName})
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
