@@ -75,6 +75,11 @@ spring:
   cache:
     type: redis
 
+  # 开启虚拟线程池
+  threads:
+    virtual:
+      enabled: true
+
 # 健康检查
 management:
   endpoints:
