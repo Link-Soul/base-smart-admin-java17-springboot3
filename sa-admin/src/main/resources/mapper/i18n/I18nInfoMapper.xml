@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.lab1024.sa.admin.module.i18n.mapper.I18nInfoMapper">
+
+    <select id="listByPage" resultType="net.lab1024.sa.admin.module.i18n.resp.I18nInfoRespVO">
+        select
+            *
+        from
+            i18n_info
+        <where>
+            1 = 1
+            <if test="i18n.msg != null and i18n.msg != ''">
+                and (msg_cn like concat('%', #{i18n.msg}, '%')
+                or msg_kr like concat('%', #{i18n.msg}, '%')
+                or msg_jp like concat('%', #{i18n.msg}, '%')
+                or msg_en like concat('%', #{i18n.msg}, '%'))
+            </if>
+            <if test="i18n.msgKey != null and i18n.msgKey != ''">
+                and (msg_key like concat('%', #{i18n.msgKey}, '%'))
+            </if>
+            <if test="i18n.msgType != null and i18n.msgType != ''">
+                and msg_type = #{i18n.msgType}
+            </if>
+        </where>
+    </select>
+</mapper>

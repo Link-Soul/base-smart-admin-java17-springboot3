@@ -11,12 +11,9 @@ import lombok.Getter;
  */
 @Getter
 @AllArgsConstructor
-public enum OrderErrorCode implements ErrorCode {
+public enum I18nErrorCode implements ErrorCode {
 
-    /**
-     * 业务错误
-     */
-    BUSINESS_HANDING(50001, "呃~ 业务繁忙，请稍后重试"),
+    I18N_INFO_KEY_EXIST(40001, "msgKey已存在"),
 
     ;
 
@@ -26,10 +23,10 @@ public enum OrderErrorCode implements ErrorCode {
 
     private final String level;
 
-    OrderErrorCode(int code, String msg) {
+    I18nErrorCode(int code, String msg) {
         this.code = code;
         this.msg = msg;
-        this.level = LEVEL_BUSINESS;
+        this.level = LEVEL_USER;
     }
 
 }

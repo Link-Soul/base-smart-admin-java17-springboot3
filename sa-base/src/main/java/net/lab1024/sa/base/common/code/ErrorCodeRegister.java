@@ -12,7 +12,7 @@ import static net.lab1024.sa.base.common.code.ErrorCodeRangeContainer.register;
  * @Date 2021/09/27 23:09
  * @Wechat zhuoda1024
  * @Email lab1024@163.com
- * @Copyright  <a href="https://1024lab.net">1024创新实验室</a>
+ * @Copyright <a href="https://1024lab.net">1024创新实验室</a>
  */
 public class ErrorCodeRegister {
 
@@ -28,7 +28,10 @@ public class ErrorCodeRegister {
         register(UserErrorCode.class, 30001, 40000);
 
         // 订单 通用错误码
-        register(OrderErrorCode.class, 40001, 50000);
+        register(I18nErrorCode.class, 40001, 50000);
+
+        // 订单 通用错误码
+        register(OrderErrorCode.class, 50001, 60000);
 
     }
 
