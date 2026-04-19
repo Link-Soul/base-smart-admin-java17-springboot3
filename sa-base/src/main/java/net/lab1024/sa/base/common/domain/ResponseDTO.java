@@ -29,9 +29,6 @@ public class ResponseDTO<T> {
     @Schema(description = "返回码")
     private Integer code;
 
-    @Schema(description = "级别")
-    private String level;
-
     private String msg;
 
     private Boolean ok;
@@ -42,18 +39,16 @@ public class ResponseDTO<T> {
     @SchemaEnum(value = DataTypeEnum.class,desc = "数据类型")
     private Integer dataType;
 
-    public ResponseDTO(Integer code, String level, boolean ok, String msg, T data) {
+    public ResponseDTO(Integer code, boolean ok, String msg, T data) {
         this.code = code;
-        this.level = level;
         this.ok = ok;
         this.msg = msg;
         this.data = data;
         this.dataType = DataTypeEnum.NORMAL.getValue();
     }
 
-    public ResponseDTO(Integer code, String level, boolean ok, String msg) {
+    public ResponseDTO(Integer code, boolean ok, String msg) {
         this.code = code;
-        this.level = level;
         this.ok = ok;
         this.msg = msg;
         this.dataType = DataTypeEnum.NORMAL.getValue();
@@ -61,7 +56,6 @@ public class ResponseDTO<T> {
 
     public ResponseDTO(ErrorCode errorCode, boolean ok, String msg, T data) {
         this.code = errorCode.getCode();
-        this.level = errorCode.getLevel();
         this.ok = ok;
         if (StringUtils.isNotBlank(msg)) {
             this.msg = msg;
@@ -73,15 +67,15 @@ public class ResponseDTO<T> {
     }
 
     public static <T> ResponseDTO<T> ok() {
-        return new ResponseDTO<>(OK_CODE, null, true, OK_MSG, null);
+        return new ResponseDTO<>(OK_CODE, true, OK_MSG, null);
     }
 
     public static <T> ResponseDTO<T> ok(T data) {
-        return new ResponseDTO<>(OK_CODE, null, true, OK_MSG, data);
+        return new ResponseDTO<>(OK_CODE, true, OK_MSG, data);
     }
 
     public static <T> ResponseDTO<T> okMsg(String msg) {
-        return new ResponseDTO<>(OK_CODE, null, true, msg, null);
+        return new ResponseDTO<>(OK_CODE, true, msg, null);
     }
 
     // -------------------------------------------- 最常用的 用户参数 错误码 --------------------------------------------
@@ -106,7 +100,7 @@ public class ResponseDTO<T> {
     }
 
     public static <T>  ResponseDTO<T> error(ResponseDTO<?> responseDTO) {
-        return new ResponseDTO<>(responseDTO.getCode(), responseDTO.getLevel(), responseDTO.getOk(), responseDTO.getMsg(), null);
+        return new ResponseDTO<>(responseDTO.getCode(), responseDTO.getOk(), responseDTO.getMsg(), null);
     }
 
     public static <T> ResponseDTO<T> error(ErrorCode errorCode, String msg) {

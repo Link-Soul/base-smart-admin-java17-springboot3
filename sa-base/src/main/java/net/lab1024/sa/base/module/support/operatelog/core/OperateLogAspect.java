@@ -224,7 +224,6 @@ public abstract class OperateLogAspect {
             ResponseDTO response = (ResponseDTO) responseDTO;
             ResponseDTO logResponseDTO = new ResponseDTO(
                     response.getCode(),
-                    response.getLevel(),
                     response.getOk(),
                     response.getMsg(),
                     null
