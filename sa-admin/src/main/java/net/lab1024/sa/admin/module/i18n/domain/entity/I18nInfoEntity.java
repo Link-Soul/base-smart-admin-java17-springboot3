@@ -16,7 +16,7 @@ import java.io.Serializable;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-@TableName("i18n_info")
+@TableName("t_i18n_info")
 public class I18nInfoEntity extends BaseEntity implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;

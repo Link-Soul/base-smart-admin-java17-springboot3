@@ -84,7 +84,7 @@ public class I18nInfoService extends ServiceImpl<I18nInfoMapper, I18nInfoEntity>
      * 导入
      */
     @Transactional(rollbackFor = Throwable.class)
-    public ResponseDTO<String> addForImport(MultipartFile file) throws Exception {
+    public ResponseDTO<String> addForImport(MultipartFile file){
 
         List<I18nImportDTO> dataList;
         try {

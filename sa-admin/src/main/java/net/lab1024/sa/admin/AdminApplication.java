@@ -1,5 +1,6 @@
 package net.lab1024.sa.admin;
 
+import cn.hutool.extra.spring.SpringUtil;
 import net.lab1024.sa.base.listener.Ip2RegionListener;
 import net.lab1024.sa.base.listener.LogVariableListener;
 import org.apache.ibatis.annotations.Mapper;
@@ -10,6 +11,8 @@ import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServic
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.support.StaticMessageSource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 /**
@@ -27,6 +30,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ComponentScan(AdminApplication.COMPONENT_SCAN)
 @MapperScan(value = AdminApplication.COMPONENT_SCAN, annotationClass = Mapper.class)
 @SpringBootApplication(exclude = {UserDetailsServiceAutoConfiguration.class})
+// 用于简易的启动国际化
+@Import({StaticMessageSource.class, SpringUtil.class})
 public class AdminApplication {
 
     public static final String COMPONENT_SCAN = "net.lab1024.sa";
