@@ -40,6 +40,7 @@ public class ResponseDTO<T> {
     private Integer dataType;
 
     public ResponseDTO(Integer code, boolean ok, String msg, T data) {
+        // TODO 简单的在此处增加国际化
         this.code = code;
         this.ok = ok;
         this.msg = msg;
