@@ -16,6 +16,27 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for t_category
 -- ----------------------------
+DROP TABLE IF EXISTS `t_i18n_info`;
+CREATE TABLE `t_i18n_info`  (
+    `id` varchar(64)  NOT NULL COMMENT '主键',
+    `msg_key` varchar(100)  NOT NULL COMMENT '国际化key',
+    `msg_cn` varchar(200)  NOT NULL COMMENT '中文',
+    `msg_kr` varchar(200)  NULL DEFAULT NULL COMMENT '韩文',
+    `msg_jp` varchar(200)  NULL DEFAULT NULL COMMENT '日文',
+    `msg_en` varchar(200)  NULL DEFAULT NULL COMMENT '英文',
+    `msg_type` char(1)  NOT NULL COMMENT '消息类型：F前端/B后端',
+    `error_code` int(11) NULL DEFAULT NULL COMMENT '错误码',
+    `create_user` varchar(12)  NOT NULL COMMENT '新增人',
+    `create_time` datetime NULL DEFAULT null COMMENT '新增时间',
+    `update_user` varchar(50)  NULL DEFAULT NULL COMMENT '更新人',
+    `update_time` datetime NULL DEFAULT NULL COMMENT '更新时间',
+    PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '国际化表' ROW_FORMAT = Dynamic;
+
+
+-- ----------------------------
+-- Table structure for t_category
+-- ----------------------------
 DROP TABLE IF EXISTS `t_category`;
 CREATE TABLE `t_category`  (
   `category_id` int(0) NOT NULL AUTO_INCREMENT COMMENT '分类id',
