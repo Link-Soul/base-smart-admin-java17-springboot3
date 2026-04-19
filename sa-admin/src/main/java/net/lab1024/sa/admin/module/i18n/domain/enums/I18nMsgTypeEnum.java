@@ -5,7 +5,7 @@ import lombok.Getter;
 /**
  * 国际化消息类型枚举
  *
- * @author FangCheng
+ * @author Link
  * @since 2024/12/27 16:52
  **/
 @Getter

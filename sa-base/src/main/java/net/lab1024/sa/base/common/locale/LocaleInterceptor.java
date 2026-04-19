@@ -7,7 +7,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 /**
  * 语言环境拦截器
  *
- * @author FangCheng
+ * @author Link
  * @since 2025/01/02 11:11
  **/
 public class LocaleInterceptor implements HandlerInterceptor {
@@ -18,7 +18,7 @@ public class LocaleInterceptor implements HandlerInterceptor {
      * @param response response
      * @param handler  handler
      * @return boolean
-     * @author FangCheng
+     * @author Link
      * @since 2025/01/02 11:12
      */
     @Override
@@ -34,7 +34,7 @@ public class LocaleInterceptor implements HandlerInterceptor {
      * @param response response
      * @param handler  handler
      * @param ex       ex
-     * @author FangCheng
+     * @author Link
      * @since 2025/01/02 11:12
      */
     @Override

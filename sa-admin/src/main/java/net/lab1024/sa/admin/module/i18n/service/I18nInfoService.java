@@ -164,7 +164,7 @@ public class I18nInfoService extends ServiceImpl<I18nInfoMapper, I18nInfoEntity>
      * 初始化spring 国际化
      * 将国际化信息存入内存，方便后续使用
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/27 16:50
      */
     @PostConstruct

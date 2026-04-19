@@ -11,7 +11,7 @@ import java.io.Serializable;
 /**
  * 国际化表
  *
- * @author FangCheng
+ * @author Link
  * @since 2025-07-16 16:57:43
  */
 @EqualsAndHashCode(callSuper = true)

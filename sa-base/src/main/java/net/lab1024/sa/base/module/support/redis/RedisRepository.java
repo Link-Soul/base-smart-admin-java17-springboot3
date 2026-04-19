@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * redis 操作
  *
- * @author FangCheng
+ * @author Link
  * @since 2024/12/11 14:07
  **/
 @Slf4j
@@ -58,7 +58,7 @@ public class RedisRepository {
     /**
      * 添加不失效缓存
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param value  缓存的value
@@ -77,7 +77,7 @@ public class RedisRepository {
      * 添加缓存，永不过期，谨慎使用
      *
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param value  缓存的value
@@ -89,7 +89,7 @@ public class RedisRepository {
     /**
      * 添加缓存
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param value  缓存的value
@@ -112,7 +112,7 @@ public class RedisRepository {
     /**
      * 取缓存
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return Object
@@ -127,7 +127,7 @@ public class RedisRepository {
     /**
      * 取String缓存
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return String
@@ -146,7 +146,7 @@ public class RedisRepository {
     /**
      * 取int类型缓存
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return Integer
@@ -165,7 +165,7 @@ public class RedisRepository {
     /**
      * 更新缓存有效期
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param second 缓存的失效时间
@@ -183,7 +183,7 @@ public class RedisRepository {
     /**
      * 获取缓存有效期
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return 缓存有效期
@@ -198,7 +198,7 @@ public class RedisRepository {
     /**
      * 当缓存中没有时存入，缓存中存在时不存入
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param value     缓存的value
@@ -211,7 +211,7 @@ public class RedisRepository {
     /**
      * 当缓存中没有时存入，缓存中存在时不存入
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param value     缓存的value
@@ -242,7 +242,7 @@ public class RedisRepository {
     /**
      * 缓存中key对应的值增加数值incrValue
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param incrValue 增加的值
@@ -266,7 +266,7 @@ public class RedisRepository {
     /**
      * 缓存中key对应的值增加数值long
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param incrValue 增加的值
@@ -294,7 +294,7 @@ public class RedisRepository {
      * 设置hash值，使用默认的有效时长<br>
      * 注意，默认的有效时长设置的是key的有效时长
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param hashKey hash的key
@@ -316,7 +316,7 @@ public class RedisRepository {
      * 设置hash值，指定有效时长<br>
      * 注意，有效时长设置的是key的有效时长
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param hashKey hash的key
@@ -336,7 +336,7 @@ public class RedisRepository {
     /**
      * 获取hash的值
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @param hashKey hash的key
@@ -352,7 +352,7 @@ public class RedisRepository {
     /**
      * 获取全部的hash值
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return 所有hash值
@@ -367,7 +367,7 @@ public class RedisRepository {
     /**
      * 获取全部的hash值
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return 所有hash值
@@ -385,7 +385,7 @@ public class RedisRepository {
     /**
      * set 中添加元素，支持一次增加多个元素，逗号分隔即可，结果返回添加的个数
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/20 17:12
      * @param key key
      * @param value value
@@ -398,7 +398,7 @@ public class RedisRepository {
     /**
      * set 中添加元素，支持一次增加多个元素，逗号分隔即可，结果返回添加的个数
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/20 17:12
      * @param key key
      * @param value value
@@ -411,7 +411,7 @@ public class RedisRepository {
     /**
      * 移除set中的元素，支持一次删除多个元素，逗号分隔即可，结果返回删除的个数
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/20 17:13
      * @param key key
      * @param value value
@@ -424,7 +424,7 @@ public class RedisRepository {
     /**
      * 获取set中的所有元素，返回一个Set集合
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/20 17:15
      * @param key key
      * @return java.util.Set<java.lang.Object>
@@ -436,7 +436,7 @@ public class RedisRepository {
     /**
      * 获取set的大小
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/20 17:14
      * @param key key
      * @return java.lang.Long
@@ -449,7 +449,7 @@ public class RedisRepository {
     /**
      * 删除指定的key
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      */
@@ -463,7 +463,7 @@ public class RedisRepository {
     /**
      * 删除指定的hash中的key
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key     缓存的key
      * @param hashKey hash的key
@@ -478,7 +478,7 @@ public class RedisRepository {
     /**
      * 判断缓存中有没有键为key的值
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param key 缓存的key
      * @return true if exists else false
@@ -493,7 +493,7 @@ public class RedisRepository {
     /**
      * 获取匹配pattern的key
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param pattern 匹配规则
      * @return 所有匹配的key
@@ -508,7 +508,7 @@ public class RedisRepository {
     /**
      * 根据传入的前缀删除匹配的key
      *
-     * @author FangCheng
+     * @author Link
      * @since 2024/12/11 15:41
      * @param names names
      */

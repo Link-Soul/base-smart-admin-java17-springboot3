@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * 国际化表
  *
- * @author FangCheng
+ * @author Link
  * @since 2025-09-10 13:33:27
  */
 @RestController

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 /**
  * 自定义的redis配置
  *
- * @author FangCheng
+ * @author Link
  * @since 2024/12/12 13:45
  **/
 @Data
